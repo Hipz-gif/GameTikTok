@@ -3,12 +3,14 @@
     <item android:id="@android:id/background">
         <shape>
             <solid android:color="#E0E0E0" /> <!-- Màu nền của ProgressBar -->
+            <corners android:radius="20dp" /> <!-- Điều chỉnh giá trị radius ở đây -->
         </shape>
     </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <solid android:color="@color/teal_700" /> <!-- Màu tiến trình của ProgressBar (Màu đỏ) -->
+                <solid android:color="#0000FF" /> <!-- Màu tiến trình của ProgressBar (Màu đỏ) -->
+                <corners android:radius="20dp" /> <!-- Điều chỉnh giá trị radius ở đây -->
             </shape>
         </clip>
     </item>

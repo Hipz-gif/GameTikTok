@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/ic_backround"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_backround"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -13,13 +13,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_frame_level"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UnusedAttribute"/>
+            tools:ignore="ContentDescription,UnusedAttribute" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -27,105 +29,154 @@
             android:layout_centerInParent="true"
             android:text="1"
             android:textSize="25dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SpUsage,TextSizeCheck,TextContrastCheck" />
     </RelativeLayout>
-<TextView
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Khang"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayoutLevel"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayoutLevel"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+<RelativeLayout
+    android:id="@+id/relativeLayoutEXP"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="25dp"
-    android:textSize="25dp"
-    android:textColor="@color/white"
-    android:text="Khang"
-    app:layout_constraintStart_toEndOf="@+id/relativeLayoutLevel"
-    app:layout_constraintTop_toTopOf="@+id/relativeLayoutLevel"/>
+    android:layout_marginStart="15dp"
+    android:layout_marginBottom="15dp"
+    app:layout_constraintBottom_toTopOf="@+id/pbHeathCharacter"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/pbExp">
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_frame_exp"
+        tools:ignore="ContentDescription" />
 
+    <TextView
+        android:id="@+id/txtExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="EXP"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+</RelativeLayout>
     <ProgressBar
         android:id="@+id/pbExp"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="155dp"
-        android:layout_height="10dp"
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
         android:indeterminate="false"
-        android:layout_marginStart="20dp"
-        android:progressDrawable="@drawable/teal_progress_bar"
         android:max="100"
         android:progress="50"
+        android:progressDrawable="@drawable/teal_progress_bar"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayoutEXP"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLevel" />
+
+    <ImageView
+        android:id="@+id/imgHeart"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintEnd_toStartOf="@+id/pbHeathCharacter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLevel"/>
+        app:layout_constraintTop_toTopOf="@+id/pbHeathCharacter"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
     <ProgressBar
-        android:id="@+id/pbHeath"
+        android:id="@+id/pbHeathCharacter"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="155dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="5dp"
-        android:indeterminateDrawable="@color/black"
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
         android:indeterminate="false"
-        android:progressDrawable="@drawable/red_progress_bar"
+        android:indeterminateDrawable="@color/black"
         android:max="100"
-        android:progress="40"
+        android:progress="100"
+        android:progressDrawable="@drawable/custom_health_character_progress_bar"
         app:layout_constraintStart_toStartOf="@+id/pbExp"
-        app:layout_constraintTop_toBottomOf="@+id/pbExp"/>
+        app:layout_constraintTop_toBottomOf="@+id/pbExp" />
 
 
-<RelativeLayout
-    android:id="@+id/relativeLayoutGame"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLevel">
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/imgCharacter"
-        android:layout_width="255dp"
-        android:layout_height="300dp"
-        android:src="@drawable/ic_anim_4_unscreen"/>
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="150dp"
-        android:layout_height="210dp"
-        android:layout_marginStart="185dp"
-        android:layout_alignLeft="@+id/imgCharacter"
-        android:layout_marginTop="45dp"
-        android:src="@drawable/ic_skill_2_unscreen" />
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/imgMonster"
-        android:layout_width="150dp"
-        android:layout_height="210dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="5dp"
-        android:src="@drawable/ic_monster_3" />
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLevel">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imgCharacter"
+            android:layout_width="255dp"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_anim_4_unscreen"
+            tools:ignore="ImageContrastCheck" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_alignLeft="@+id/imgCharacter"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/ic_skill_2_unscreen"
+            tools:ignore="ImageContrastCheck,RtlHardcoded" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imgMonster"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_monster_3" />
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/relativeInformationMonster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayoutGame">
+
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_frame_avatar_monster"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UnusedAttribute"/>
+            tools:ignore="ContentDescription,UnusedAttribute" />
+
         <ImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_monster_3"/>
+            android:src="@drawable/ic_monster_3"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
+
     <ProgressBar
         android:id="@+id/pbHeathMonster"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="250dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:layout_marginTop="45dp"
-        android:indeterminateDrawable="@color/black"
         android:indeterminate="false"
-        android:progressDrawable="@drawable/red_progress_bar"
+        android:indeterminateDrawable="@color/black"
         android:max="100"
         android:progress="100"
-        app:layout_constraintTop_toTopOf="@+id/relativeInformationMonster"
-        app:layout_constraintEnd_toStartOf="@+id/relativeInformationMonster"/>
+        android:progressDrawable="@drawable/custom_health_monster_progress_bar"
+       app:layout_constraintStart_toEndOf="@+id/relativeInformationMonster"
+        app:layout_constraintTop_toTopOf="@+id/relativeInformationMonster" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
